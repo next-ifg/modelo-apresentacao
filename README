@@ -6,3 +6,7 @@
 #+DATE: Abril de 2017
 
 Este é o tema do beamer para apresentações do NExT.
+
+#+CAPTION: Imagem do modelo da apresentação
+#+NAME: Modelo da apresentação
+[[./util/apresentacao-next-demo-0.png]]
