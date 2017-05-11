@@ -1,0 +1,240 @@
+% -*- coding: utf-8 -*-
+% -*- mode: latex -*-
+%
+% Template NExT Beamer Theme
+%
+% Autor       : Pedro Maione [pedromaionee@gmail.com]
+% Copyright   : Copyright(c) 2017 NExT. Todos os direitos reservados.
+% Description : Modelo de apresentação do Beamer com tema do NExT.
+
+\documentclass[10pt,aspectratio=43,xcolor,compress]{beamer}
+% --------------------------------------------------------------------------
+% Pacotes e configurações
+% --------------------------------------------------------------------------
+\usepackage{lipsum}
+\usepackage{tabularx,ragged2e}
+\usepackage{booktabs}
+\usepackage{listings}
+\usepackage{tikz}
+
+\usetikzlibrary{mindmap,backgrounds}
+
+\lstset{literate=
+  {ã}{{\~a}}1 {à}{{\`a}}1 {À}{{\`A}}1
+  {á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1
+  {Á}{{\'A}}1 {É}{{\'E}}1 {Í}{{\'I}}1 {Ó}{{\'O}}1 {Ú}{{\'U}}1
+  {â}{{\^a}}1 {ê}{{\^e}}1 {î}{{\^i}}1 {ô}{{\^o}}1 {û}{{\^u}}1
+  {Â}{{\^A}}1 {Ê}{{\^E}}1 {Î}{{\^I}}1 {Ô}{{\^O}}1 {Û}{{\^U}}1
+  {ç}{{\c c}}1 {Ç}{{\c C}}1
+}
+
+\lstdefinestyle{customlatex}{ %
+  language=[LaTeX]TeX,
+  columns=fullflexible,
+  breaklines=true,
+  breakatwhitespace=true,
+  backgroundcolor=\color{nextCinzaClaro},
+  basicstyle=\ttfamily\footnotesize,
+  commentstyle=\color{nextVerdeEscuro},
+  keywordstyle=\bfseries\color{nextAzul},
+  stringstyle=\color{nextVerdeEscuro},
+  showspaces=false,
+  showstringspaces=false,
+  showtabs=false,
+  keepspaces=true,
+  tabsize=4,
+  escapeinside='',
+}
+
+\lstset{ %
+  style=customlatex,
+  numbers=left,
+  numberstyle=\scriptsize\sffamily,
+  stepnumber=1,
+  frame=tb,
+  framerule=0.5pt,
+  framexleftmargin=0.5em,
+  framexrightmargin=0.5em,
+  xleftmargin=0.5em,
+  xrightmargin=0.5em
+}
+
+\hypersetup{%
+  linkcolor=nextVermelhoEscuro,
+  urlcolor=magenta,
+  colorlinks=true,
+}
+
+% --------------------------------------------------------------------------
+% Carrega o Tema
+% --------------------------------------------------------------------------
+\usetheme{next}
+
+% --------------------------------------------------------------------------
+% Configurações da apresentação
+% --------------------------------------------------------------------------
+\title{Título da Apresentação}
+\subtitle{Subtitulo da apresentação}
+\date{\today}
+\author{Pedro Maione}
+\institute{\NExT}
+
+% --------------------------------------------------------------------------
+% Configuração de anotações
+% --------------------------------------------------------------------------
+\setbeameroption{show notes}
+
+\begin{document}
+% --------------------------------------------------------------------------
+% Slide com Título
+% --------------------------------------------------------------------------
+
+\maketitle
+
+% --------------------------------------------------------------------------
+% Sumário
+% --------------------------------------------------------------------------
+\section*{Sumário}
+\begin{frame}{Sumário}
+  \tableofcontents[hideallsubsections]
+\end{frame}
+
+% --------------------------------------------------------------------------
+% Conteúdo
+% --------------------------------------------------------------------------
+\section{Introdução}
+
+\begin{frame}{Introdução}
+
+  Este é o modelo de apresentação do \textbf{\NExT} (\textbf{NExT}).
+  Ele está disponivel em \url{http://nextpesquisa.com.br/downloads}
+
+\end{frame}
+
+\section{Utilização}
+
+\begin{frame}[containsverbatim]
+  \frametitle{Frames}
+
+  Para inserir slides, utilize o comando \lstinline|frame|.
+
+\begin{lstlisting}[style=customlatex]
+\begin{frame}{Titulo}
+  % Comentário
+  '\textless{} \emph{Seu código aqui} \textgreater'
+\end{frame}
+\end{lstlisting}
+
+  O título do \emph{slide} pode ser inserido como no exemplo anterior ou utilizando o comando \lstinline|frametitle|.
+
+\begin{lstlisting}[style=customlatex]
+\begin{frame}
+  \frametitle{Titulo}
+  % Comentário
+  '\textless{} \emph{Seu código aqui} \textgreater'
+\end{frame}
+\end{lstlisting}
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{Blocos}
+
+  \begin{block}{Título do Bloco}
+    Este modelo foi preparado como uma aplicação para apresentações do \textbf{NExT}.
+  \end{block}
+
+  \begin{exampleblock}{Título do Bloco de Exemplo}
+    Este é um exemplo de bloco de exemplo.
+  \end{exampleblock}
+
+  \begin{alertblock}{Título do Bloco de Alerta}
+    \textbf{Atenção!!!}
+  \end{alertblock}
+
+
+\end{frame}
+
+\begin{frame}{Referências}
+
+  \begin{block}{CTAN}
+    The \emph{Com­pre­hen­sive TeX Archive Net­work} (CTAN) é o lugar que centraliza todo tipo de material sobre \TeX{}. 
+  \end{block}
+
+  \begin{itemize}
+  \item Mais informações sobre os pacotes do \LaTeX{} podem ser encontradas em \url{http://www.ctan.org/};
+  \item Para maiores informações a respeito do Beamer, consulte o guia do usuário em \url{https://www.ctan.org/pkg/beamer};
+  \end{itemize}
+
+  \vfill{}
+
+  Outras fontes úteis:
+  \begin{enumerate}
+  \item \url{http://www.latex-project.org/}
+  \item \url{http://tex.stackexchange.com/}
+  \item \url{http://www.tug.org/}
+  \end{enumerate}
+
+\end{frame}
+
+
+\newcommand{\ExemploPaletaCor}[2]{%
+  \setbeamercolor{exemploPaleta}{fg=#1,bg=#2}
+  \begin{beamercolorbox}[wd=\linewidth,ht=2ex,leftskip=.5ex,dp=0.7ex]{exemploPaleta}
+    \texttt{#1}
+  \end{beamercolorbox}
+}
+
+\newcommand{\ExemploPaletaCorBg}[2]{%
+  \setbeamercolor{exemploPaleta}{fg=#2,bg=#1}
+  \begin{beamercolorbox}[wd=\linewidth,ht=2ex,leftskip=.5ex,dp=0.7ex]{exemploPaleta}
+    \texttt{#1}
+  \end{beamercolorbox}
+}
+
+\section{Referências}
+
+\begin{frame}{Paleta de cores}
+  \begin{multicols}{2}
+    \ExemploPaletaCor{nextVermelhoClaro}{white}
+    \ExemploPaletaCor{nextVermelho}{white}
+    \ExemploPaletaCor{nextVermelhoEscuro}{white}
+    %
+    \ExemploPaletaCorBg{nextVermelhoClaro}{white}
+    \ExemploPaletaCorBg{nextVermelho}{white}
+    \ExemploPaletaCorBg{nextVermelhoEscuro}{white}
+  \end{multicols}
+
+  \begin{multicols}{2}
+    \ExemploPaletaCor{nextAzulClaro}{white}
+    \ExemploPaletaCor{nextAzul}{white}
+    \ExemploPaletaCor{nextAzulEscuro}{white}
+    %
+    \ExemploPaletaCorBg{nextAzulClaro}{white}
+    \ExemploPaletaCorBg{nextAzul}{white}
+    \ExemploPaletaCorBg{nextAzulEscuro}{white}
+  \end{multicols}
+
+  \begin{multicols}{2}
+    \ExemploPaletaCor{nextLaranjaClaro}{white}
+    \ExemploPaletaCor{nextLaranja}{white}
+    \ExemploPaletaCor{nextLaranjaEscuro}{white}
+    %
+    \ExemploPaletaCorBg{nextLaranjaClaro}{white}
+    \ExemploPaletaCorBg{nextLaranja}{white}
+    \ExemploPaletaCorBg{nextLaranjaEscuro}{white}
+  \end{multicols}
+
+    \begin{multicols}{2}
+    \ExemploPaletaCor{nextVerdeClaro}{white}
+    \ExemploPaletaCor{nextVerde}{white}
+    \ExemploPaletaCor{nextVerdeEscuro}{white}
+    %
+    \ExemploPaletaCorBg{nextVerdeClaro}{white}
+    \ExemploPaletaCorBg{nextVerde}{white}
+    \ExemploPaletaCorBg{nextVerdeEscuro}{white}
+  \end{multicols}
+
+\end{frame}
+
+\end{document}
