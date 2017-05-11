@@ -226,9 +226,12 @@
         \includegraphics[width=\paperwidth,height=\paperheight]{./titlepage-bg-43.eps}%
       };%
       \node [yshift=20mm](titulo) at (current page.center) {%
-        \usebeamerfont{section title}%
-        \textcolor{corPrimariaEscuro}{%
-          \insertsectionHEAD%
+        \parbox{120mm}{%
+          \centering
+          \usebeamerfont{section title}%
+          \textcolor{corPrimariaEscuro}{%
+            \insertsectionHEAD%
+          }
         }%
       }
     }
