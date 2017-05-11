@@ -1,0 +1,49 @@
+
+% Configurações do pacote `listings'
+
+\usepackage{listings}
+\lstset{literate=
+  {ã}{{\~a}}1 {à}{{\`a}}1 {À}{{\`A}}1
+  {á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1
+  {Á}{{\'A}}1 {É}{{\'E}}1 {Í}{{\'I}}1 {Ó}{{\'O}}1 {Ú}{{\'U}}1
+  {â}{{\^a}}1 {ê}{{\^e}}1 {î}{{\^i}}1 {ô}{{\^o}}1 {û}{{\^u}}1
+  {Â}{{\^A}}1 {Ê}{{\^E}}1 {Î}{{\^I}}1 {Ô}{{\^O}}1 {Û}{{\^U}}1
+  {ç}{{\c c}}1 {Ç}{{\c C}}1
+}
+
+\lstdefinestyle{customlatex}{ %
+  language=[LaTeX]TeX,
+  columns=fullflexible,
+  breaklines=true,
+  breakatwhitespace=true,
+  backgroundcolor=\color{corCinzaClaro!15},
+  basicstyle=\ttfamily\footnotesize,
+  commentstyle=\color{corSecund3Escuro},
+  keywordstyle=\bfseries\color{corSecund2},
+  stringstyle=\color{corSecund3Escuro},
+  showspaces=false,
+  showstringspaces=false,
+  showtabs=false,
+  keepspaces=true,
+  tabsize=4,
+  escapeinside='',
+}
+
+\lstset{ %
+  style=customlatex,
+  numbers=left,
+  numberstyle=\scriptsize\sffamily,
+  stepnumber=1,
+  frame=tb,
+  framerule=0.5pt,
+  framexleftmargin=0.5em,
+  framexrightmargin=0.5em,
+  xleftmargin=0.5em,
+  xrightmargin=0.5em
+}
+
+%%% Local Variables:
+%%% coding: utf-8
+%%% mode: latex
+%%% TeX-master: "apresentacao-next-demo"
+%%% End:

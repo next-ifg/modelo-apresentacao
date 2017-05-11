@@ -5,7 +5,9 @@
 %
 % Autor       : Pedro Maione [pedromaionee@gmail.com]
 % Copyright   : Copyright(c) 2017 NExT. Todos os direitos reservados.
-% Description : Modelo de apresentação do Beamer com tema do NExT.
+% Descrição   : Modelo de apresentação do Beamer com tema do NExT.
+% Versão      : 2017-02
+%
 
 \documentclass[10pt,aspectratio=43,xcolor,compress]{beamer}
 % --------------------------------------------------------------------------
@@ -14,53 +16,14 @@
 \usepackage{lipsum}
 \usepackage{tabularx,ragged2e}
 \usepackage{booktabs}
-\usepackage{listings}
-\usepackage{tikz}
 
-\usetikzlibrary{mindmap,backgrounds}
 
-\lstset{literate=
-  {ã}{{\~a}}1 {à}{{\`a}}1 {À}{{\`A}}1
-  {á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1
-  {Á}{{\'A}}1 {É}{{\'E}}1 {Í}{{\'I}}1 {Ó}{{\'O}}1 {Ú}{{\'U}}1
-  {â}{{\^a}}1 {ê}{{\^e}}1 {î}{{\^i}}1 {ô}{{\^o}}1 {û}{{\^u}}1
-  {Â}{{\^A}}1 {Ê}{{\^E}}1 {Î}{{\^I}}1 {Ô}{{\^O}}1 {Û}{{\^U}}1
-  {ç}{{\c c}}1 {Ç}{{\c C}}1
-}
 
-\lstdefinestyle{customlatex}{ %
-  language=[LaTeX]TeX,
-  columns=fullflexible,
-  breaklines=true,
-  breakatwhitespace=true,
-  backgroundcolor=\color{nextCinzaClaro},
-  basicstyle=\ttfamily\footnotesize,
-  commentstyle=\color{nextVerdeEscuro},
-  keywordstyle=\bfseries\color{nextAzul},
-  stringstyle=\color{nextVerdeEscuro},
-  showspaces=false,
-  showstringspaces=false,
-  showtabs=false,
-  keepspaces=true,
-  tabsize=4,
-  escapeinside='',
-}
-
-\lstset{ %
-  style=customlatex,
-  numbers=left,
-  numberstyle=\scriptsize\sffamily,
-  stepnumber=1,
-  frame=tb,
-  framerule=0.5pt,
-  framexleftmargin=0.5em,
-  framexrightmargin=0.5em,
-  xleftmargin=0.5em,
-  xrightmargin=0.5em
-}
+% Insere arquivo com configurações para listar códigos
+\input{listing-config}
 
 \hypersetup{%
-  linkcolor=nextVermelhoEscuro,
+  linkcolor=corPrimariaEscuro,
   urlcolor=magenta,
   colorlinks=true,
 }
@@ -78,6 +41,11 @@
 \date{\today}
 \author{Pedro Maione}
 \institute{\NExT}
+
+% --------------------------------------------------------------------------
+% Comandos personalizados
+% --------------------------------------------------------------------------
+\newcommand{\NExT}{Núcleo de Estudos e Pesquisas Experimentais e Tecnológicas}
 
 % --------------------------------------------------------------------------
 % Configuração de anotações
@@ -196,43 +164,43 @@
 
 \begin{frame}{Paleta de cores}
   \begin{multicols}{2}
-    \ExemploPaletaCor{nextVermelhoClaro}{white}
-    \ExemploPaletaCor{nextVermelho}{white}
-    \ExemploPaletaCor{nextVermelhoEscuro}{white}
+    \ExemploPaletaCor{corPrimariaClaro}{white}
+    \ExemploPaletaCor{corPrimaria}{white}
+    \ExemploPaletaCor{corPrimariaEscuro}{white}
     %
-    \ExemploPaletaCorBg{nextVermelhoClaro}{white}
-    \ExemploPaletaCorBg{nextVermelho}{white}
-    \ExemploPaletaCorBg{nextVermelhoEscuro}{white}
+    \ExemploPaletaCorBg{corPrimariaClaro}{white}
+    \ExemploPaletaCorBg{corPrimaria}{white}
+    \ExemploPaletaCorBg{corPrimariaEscuro}{white}
   \end{multicols}
 
   \begin{multicols}{2}
-    \ExemploPaletaCor{nextAzulClaro}{white}
-    \ExemploPaletaCor{nextAzul}{white}
-    \ExemploPaletaCor{nextAzulEscuro}{white}
+    \ExemploPaletaCor{corSecund1Claro}{white}
+    \ExemploPaletaCor{corSecund1}{white}
+    \ExemploPaletaCor{corSecund1Escuro}{white}
     %
-    \ExemploPaletaCorBg{nextAzulClaro}{white}
-    \ExemploPaletaCorBg{nextAzul}{white}
-    \ExemploPaletaCorBg{nextAzulEscuro}{white}
+    \ExemploPaletaCorBg{corSecund1Claro}{white}
+    \ExemploPaletaCorBg{corSecund1}{white}
+    \ExemploPaletaCorBg{corSecund1Escuro}{white}
   \end{multicols}
 
   \begin{multicols}{2}
-    \ExemploPaletaCor{nextLaranjaClaro}{white}
-    \ExemploPaletaCor{nextLaranja}{white}
-    \ExemploPaletaCor{nextLaranjaEscuro}{white}
+    \ExemploPaletaCor{corSecund2Claro}{white}
+    \ExemploPaletaCor{corSecund2}{white}
+    \ExemploPaletaCor{corSecund2Escuro}{white}
     %
-    \ExemploPaletaCorBg{nextLaranjaClaro}{white}
-    \ExemploPaletaCorBg{nextLaranja}{white}
-    \ExemploPaletaCorBg{nextLaranjaEscuro}{white}
+    \ExemploPaletaCorBg{corSecund2Claro}{white}
+    \ExemploPaletaCorBg{corSecund2}{white}
+    \ExemploPaletaCorBg{corSecund2Escuro}{white}
   \end{multicols}
 
     \begin{multicols}{2}
-    \ExemploPaletaCor{nextVerdeClaro}{white}
-    \ExemploPaletaCor{nextVerde}{white}
-    \ExemploPaletaCor{nextVerdeEscuro}{white}
+    \ExemploPaletaCor{corSecund3Claro}{white}
+    \ExemploPaletaCor{corSecund3}{white}
+    \ExemploPaletaCor{corSecund3Escuro}{white}
     %
-    \ExemploPaletaCorBg{nextVerdeClaro}{white}
-    \ExemploPaletaCorBg{nextVerde}{white}
-    \ExemploPaletaCorBg{nextVerdeEscuro}{white}
+    \ExemploPaletaCorBg{corSecund3Claro}{white}
+    \ExemploPaletaCorBg{corSecund3}{white}
+    \ExemploPaletaCorBg{corSecund3Escuro}{white}
   \end{multicols}
 
 \end{frame}

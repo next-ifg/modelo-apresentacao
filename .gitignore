@@ -43,3 +43,5 @@
 *-blx.bib
 *.run.xml
 */auto/
+*.nav
+*.snm
